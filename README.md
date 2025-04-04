@@ -1,1 +1,3 @@
-# Web-Project
+# Consumer Manufacture Website
+
+Welcome to our upcoming web application that aims to connect consumers with trusted and qualified textile manufacturers in their vicinity. We understand how important it is to find reliable and high quality clothing manufacturers for your business needs, and we are here to make that process easier for you. Our platform will allow you to easily search and connect with textile manufacturers who meet your specific requirements. Whether you're looking for a manufacturer for a small order for personal use or a large-scale production run, we've got you covered. So, get ready to streamline your manufacturing needs and take your business to the next level with our easy-to-use platform. 
