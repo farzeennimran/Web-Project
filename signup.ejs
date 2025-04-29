@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <title>SIGNUP</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-scholar.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!--
+
+TemplateMo 586 Scholar
+
+https://templatemo.com/tm-586-scholar
+
+-->
+<style>
+    .main-button .ax {
+  display: inline-block;
+  background-color: rgb(221, 206, 206);
+  color: #7a6ad8;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 25px;
+  border-radius: 20px;
+  transition: all .3s;
+}
+
+.main-button .ax:hover {
+  background-color: #7a6ad8;
+  color: #fff;
+}
+</style>
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/home" class="logo">
+                        <h1>Weavers Den</h1>
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Serach Start ***** -->
+                 
+                        <!-- ***** Serach Start ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                        <li class="scroll-to-section"><a href="/home" class="active">Home</a></li>
+                        <li class="scroll-to-section"><a href="/explore">Manufactures</a></li>
+                        <li class="scroll-to-section"><a href="/event">Events</a></li>
+                        <li class="scroll-to-section"><a href="/about">About</a></li>
+                        <li class="scroll-to-section"><a href="/contact">contact us</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <div class="main-banner" id="top">
+        <div class="container">
+            <div class="row">
+        <div class="main-button">
+            <!-- <input type="radio" id="admin" name="role" value="A" checked>
+            <label for="A">Admin</label><br> -->
+            <input type="radio" id="Manufacturer"lass="ax"  name="role" value="M" >
+            <label for="M" class="ax"> Manufacturer</label><br>
+            <br>
+            <input type="radio" lass="ax" id="Consumer" name="role" value="C" checked>
+            <label for="C" class="ax">Consumer</label>
+        </div>
+        </div>
+        </div>
+     </div>
+
+    <div class="contact-us section" id="form">
+        <h2 class="container" >User Form</h2>
+        <div class="container" style="position:  inherit;" >
+            <div class="row">
+                <div class="col-lg-6  align-self-center">
+                    <div class="section-heading">
+                        <h6>New Here</h6>
+                        <h2>Already a memeber <a href="/login">Login</a></h2>
+                    </div>
+                </div>
+                <div class="col-lg-6" >
+                    <div class="contact-us-content">
+                        <form id="contact-form" class="0" action="/signup" method="post">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                    <input type="text" id="username" name="username" placeholder="enter your username" required>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <input type="email" id="email" name="email" placeholder="enter your email here" required>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                    <input type="password" id="password" name="password"  placeholder="enter your password here" required>
+                                    </fieldset>
+                                </div>
+                                <input type="hidden" value="A" name="value1">
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="orange-button">Signup</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="contact-us section" id="form2">
+    <h2 class="container">Consumer Form</h2>
+    <div class="container" style="position:  inherit;">
+        <div class="row">
+            <div class="col-lg-6  align-self-center">
+                <div class="section-heading">
+                    <h6>New Here</h6>
+                    <h2>Already a memeber <a href="/login">Login</a></h2>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="contact-us-content">
+                    <form id="contact-form" action="/signupcon" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="username" name="username" placeholder="enter your username"
+                                        required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="email" id="email" name="email" placeholder="enter your email here"
+                                        required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="password" id="password" name="password"
+                                        placeholder="enter your password here" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="contactname" name="contactname"
+                                        placeholder="enter your contact name" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="email" id="contactemail" name="contactemail"
+                                        placeholder="enter your contact email" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="companyname" name="companyname"
+                                        placeholder="enter your company name" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="website" name="website" placeholder="enter your website"
+                                        required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="Address" name="Address" placeholder="enter your Address here"
+                                        required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="contactphone" name="contactphone"
+                                        placeholder="enter your contact phone" required>
+                                </fieldset>
+                            </div>
+                                    <input type="file" name="Picture" required>
+                            <input type="hidden" name="value4" value="C" readonly>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="orange-button">Signup</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="contact-us section" id="form1">
+    <h2 class="container">Manufacturer Form</h2>
+    <div class="container" style="position:  inherit;">
+        <div class="row">
+            <div class="col-lg-6  align-self-center">
+                <div class="section-heading">
+                    <h6>New Here</h6>
+                    <h2>Already a memeber <a href="/login">Login</a></h2>
+                </div>
+            </div>    
+        <div class="col-lg-6">
+                <div class="contact-us-content">
+                    <form id="contact-form" class="1" action="/signupman" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="username" name="username" placeholder="enter your username"
+                                        required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="email" id="email" name="email" placeholder="enter your email here"
+                                        required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="password" id="password" name="password"
+                                        placeholder="enter your password here" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="contactname" name="contactname"
+                                        placeholder="enter your contact name" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="email" id="contactemail" name="contactemail"
+                                        placeholder="enter your contact email" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="companyname" name="companyname"
+                                        placeholder="enter your company name" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="website" name="website" placeholder="enter your website"
+                                        required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="Address" name="Address" placeholder="enter your Address here"
+                                        required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="contactphone" name="contactphone"
+                                        placeholder="enter your contact phone" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" id="material" name="material" placeholder="enter your material"
+                                        required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="file" name="Picture" required>
+                                </fieldset>
+                            </div>
+                            <input type="hidden" name="value2" value="M" readonly>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="orange-button">Signup</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <div class="container">
+            <div class="col-lg-12">
+                <p>Copyright © 2036 Scholar Organization. All rights reserved. &nbsp;&nbsp;&nbsp; Design: <a
+                        href="https://templatemo.com" rel="nofollow" target="_blank">TemplateMo</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var manufacturer = document.getElementById('form1')
+        var consumer = document.getElementById('form2')
+        var admin = document.getElementById('form')
+        admin.style.display = "none"
+        consumer.style.display = "block"
+        manufacturer.style.display = "none"
+
+
+
+        function handleRadioClick() {
+            if (document.getElementById('Manufacturer').checked) {
+                manufacturer.style.display = "block"
+                consumer.style.display = "none"
+                admin.style.display = "none"
+            }
+            else if (document.getElementById('Consumer').checked) {
+                consumer.style.display = "block"
+                manufacturer.style.display = "none"
+                admin.style.display = "none"
+            }
+        }
+
+        const radioButtons = document.querySelectorAll('input[name="role"]');
+        radioButtons.forEach(radio => {
+            radio.addEventListener('click', handleRadioClick);
+        });
+    </script>
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/counter.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/dark.js"></script>
+
+ 
+
+</body>
+
+</html>
