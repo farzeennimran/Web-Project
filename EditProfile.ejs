@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weavers Den Edit Profile</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #DDD0C8;
+    }
+    h2 {
+      color: #323232;
+    }
+    label {
+      color: #323232;
+    }
+    .form-control {
+      background-color: #F8F8F8;
+      border: 1px solid #CCC;
+      color: #323232;
+      border-radius: 4px;
+      padding: 8px;
+    }
+    .form-control:focus {
+      border-color: #999;
+      outline: 0;
+      box-shadow: none;
+    }
+    .btn-primary {
+      background-color: #323232;
+      color: #FFF;
+    }
+  </style>
+</head>
+<body style="background-color: rgb(158, 158, 241);">
+  <nav class="navbar"  style="background-color: white;"> 
+    <a class="navbar-brand" href="/home">Home</a>
+    <a class="navbar-brand" href="/about">About</a>
+    <a class="navbar-brand" href="/contact">contact</a>
+    <a class="navbar-brand" href="/logout">Logout</a>
+
+  </nav>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8" style="    position: relative;
+    left: 18%;
+    right: 82%;
+    background-color:white;
+     border:2px solid white;
+     border-radius: 20px;
+     "
+    
+    >
+        <center><h2>Edit Profile</h2></center>
+        <form action="/update" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="website">Website</label>
+            <input type="text" class="form-control" name="website" id="website" VALUE="<%=data.website_url%>"placeholder="Enter your website URL" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Contact Email</label>
+            <input type="email" class="form-control"  name="email" id="email" value="<%=data.contact_email%>" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" class="form-control" name="phone" id="phone" value="<%=data.contact_phone%>" required>
+          </div>
+            <div class="form-group">
+              <label for="companyname">Company Name </label>
+              <input type="text" class="form-control" name="companyname" id="companyname" value="<%=data.company_name%>" required>
+            </div>
+            <div class="form-group">
+              <label for="contactname">Contact Name </label>
+              <input type="text" class="form-control" name="contactname" id="contactname" value="<%=data.contact_name%>" required>
+            </div>
+            <div class="form-group">
+              <label for="Address">Address </label>
+              <input type="text" class="form-control"   name="Address"  id="Address"  value="<%=data.address%>" required>
+            </div>
+            <div class="form-group">
+              <label for="Picture">Image </label>
+              <input type="file" class="form-control" name="Picture" id="img" value="<%=data.image%>" >
+            </div>
+            <input type="hidden" value="<%=data.consumer_id%>" name="id">
+            <input type="hidden" value="<%=data.manufacturer_id%>" name="idm">
+            <input type="hidden" value="<%=data.image%>" name="oldimg">
+             <input  color= "black" type="submit" value="Submit" class="btn btn-primary" />
+        </form>
+      </div>
+ 
+    </div>
+  </div>
+
+
+
+<%if(data.consumer_id != null){%>
+  <div class="container mt-5" style="    position: relative;
+    left: 0%;
+    overflow: hidden;
+    background-color:white;
+     border:2px solid white;
+     border-radius: 20px;
+     max-width: 50%;
+     margin-bottom: 40px;
+     ">
+    <div class="row">
+      <div class="col-md-8">
+        <form action="/setpremconsum" method="post">
+          <div class="form-group">
+            <h2>Change Plan</h2>
+            <%if(data.is_premium==1){%>
+                       <h1>Already Premium Member</h1>
+              <%}%>
+            <div>
+              <input type="radio" name="role" value="Basic" >
+              <label for="Basic">Basic</label><br>
+              <input type="radio" name="role" value="Standard">
+              <label for="Standard">Standard</label><br>
+              <input type="radio" name="role" value="Premium">
+              <label for="Premium">Premium</label>
+            </div>
+          </div>
+          <input type="hidden" value="<%=data.consumer_id%>" name="conid"> 
+         <input color="black" type="submit" value="Submit" class="btn btn-primary" />
+        </form>
+      </div>
+    </div>
+  </div>
+  
+<%}%>
+  <script>
+ 
+  </script>
+</body>
+</html>
