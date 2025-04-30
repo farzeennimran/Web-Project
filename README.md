@@ -6,7 +6,7 @@ Welcome to our upcoming web application that aims to connect consumers with trus
 ## 2. Functionalities
 The following section contains all the functionalities proposed for this project.
 
-### 2.1. Sign up (Manufacturer/Consumer )
+### 2.1. Sign up (Manufacturer/Consumer)
 Manufacturer and Consumer will be registered along their respective bios.
 
 ### 2.2. Log inn (Manufacturer/Consumer/Admin)
@@ -47,11 +47,11 @@ require personalized attention or have unique requirements that can't be address
 remotely. It's important to clearly communicate the value proposition of onsite
 examination to consumers and manufacturers.
 
-### 2.13. Subscription tiers(extra)
+### 2.13. Subscription tiers
 There will be multiple subscription tiers that will provide varied services and
 benefits to consumers.
 
-### 2.14. Tracking (extra)
+### 2.14. Tracking
 We will keep track records of manufacturers and consumers according to
 successful cases and both side feedback. This will help identify legitimate
 consumers and promote manufacturers that are receiving positive feedback from
