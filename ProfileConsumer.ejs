@@ -1,0 +1,312 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Profile Page</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+          <link rel="stylesheet" href="assets/css/fontawesome.css">
+          <link rel="stylesheet" href="assets/css/templatemo-scholar.css">
+          <link rel="stylesheet" href="assets/css/owl.css">
+          <link rel="stylesheet" href="assets/css/animate.css">
+          <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      <!------ Include the above in your HEAD tag ---------->
+
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+
+       .checked {
+         color: orange;
+         }
+      body {
+        background-color: #DDD0C8;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .profile-header {
+        background-image: url("https://media.istockphoto.com/id/1036551174/photo/wood-raw-material-trunk-tree.jpg?s=1024x1024&w=is&k=20&c=nxIpytYoL4kenm0eMh2mEfzG05hf3kbGXU4Tip-vWsw=");
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+      }
+
+      .profile-pic {
+        border: 5px solid #fff;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin-top: -75px;
+        margin-left: 30px;
+      }
+
+      .profile-name {
+        font-size: 28px;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+
+      .profile-username {
+        font-size: 20px;
+        color: #888;
+      }
+
+         .badge {
+  display: inline-block;
+  background-color: #1DA1F2;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+
+      .profile-bio {
+        font-size: 18px;
+        margin-top: 20px;
+      }
+
+      .profile-stats {
+        margin-top: 30px;
+      }
+
+      .profile-stat-count {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .profile-stat-label {
+        font-size: 16px;
+        color: #888;
+        margin-top: 5px;
+      }
+
+      .profile-edit-btn {
+        display: inline-block;
+        background-color: #ffd800;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 20px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .profile-edit-btn:hover {
+        background-color: #2680c2;
+      }
+
+      .profile-actions {
+        margin-top: 20px;
+      }
+
+      .profile-action-btn {
+        display: inline-block;
+        background-color: #fff;
+        color: #333;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 18px;
+        font-weight: 600;
+        margin-right: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .profile-action-btn:hover {
+        background-color: #eee;
+      }
+
+      .profile-posts {
+        margin-top: 30px;
+      }
+
+      .profile-post {
+        margin-bottom: 30px;
+      }
+
+      .profile-post-img {
+        max-width: 100%;
+      }
+
+      .rating {
+  display: inline-block;
+}
+
+.rating input[type="radio"] {
+  display: none;
+}
+
+.rating label {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  margin-right: 5px;
+  line-height: 30px;
+}
+
+.rating label:before {
+  content: '\2605';
+}
+
+.rating input[type="radio"]:checked + label {
+  color: #ffca08;
+}
+
+body {
+  /* Light Mode Styles */
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+body.dark-mode {
+  /* Dark Mode Styles */
+  background-color: #333;
+  color: #f7f7f7;
+}
+
+button#theme-toggle {
+  padding: 10px;
+  background-color: #333;
+  color: #f7f7f7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+ .animated {
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+.stars
+{
+    margin: 20px 0;
+    font-size: 24px;
+    color: #d17581;
+}
+.dc{
+  background-color: rgb(219, 194, 219);
+}
+    </style>
+  <body>
+
+    <section style="background-color: #eee;">
+      <div class="container py">
+        <div class="row">
+          <div class="col">
+            <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+              <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                <li class="breadcrumb-item"><a href="/explore">explore</a></li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card mb-4">
+              <div class="card-body text-center">
+                <img src="../uploads/<%=data.image%>" alt="avatar"
+                  class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3"><%=data.company_name%> <%if(data.is_premium==1){%>
+                  <img src="../uploads/check.png" alt="" style="height: 22px; width: 22px;">
+                  <%}%></h5>
+                <p class="text-muted mb-1"><%=data.contact_name%></p>
+              </div>
+            </div>
+           
+
+          </div>
+          <div class="col-lg-8">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Full Name</p>
+                  </div>
+                  <div class="col-sm-9">
+                   
+                    <p class="text-muted mb-0"><%=data.company_name%></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Email</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><%=data.contact_email%></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Phone</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><%=data.contact_phone%></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Address</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><%=data.address%></p>
+                  </div>
+                </div>
+              </div>
+              <div class="main-button">
+            <a href="/editprofile">Edit Profile</a>
+            </div>
+                <form class="col lg-8" action="/meeting" method="post">
+                  <div class="main-button">
+                  <select class="profile-edit-btn m-1 dc" name="select" aria-label="Default select example" required>
+                    <%if(manfact.length> 0){
+                      manfact.forEach(function(data){
+                      %>
+                    <option value="<%=data.manufacturer_id%>"><%=data.company_name%></option>
+                        <% }); } %>
+                  </select>
+                  </div>
+                  <input  class="col-sm-4 py-2 m-2" type="text" name="address" placeholder="enter your Address">
+                  <input type="submit" class="btn" value="Schedule Meeting">
+                </form>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+   
+    </section>
+
+
+</body>
+
+</html>
