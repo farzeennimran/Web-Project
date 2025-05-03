@@ -28,7 +28,7 @@ app.use(session({
 
 // const sql=require('mssql')
 var config = {
-    server: "DESKTOP-V53CERG\MSSQLSERVER01", // eg:: 'DESKTOP_mjsi\\MSSQLEXPRESS'
+    server: "YOUR-DEVICE-NAME\MSSQLSERVER01", 
     database: "Weavers_Den",
     user: '',      // write your device's name
     password: "",   // write your device's password
