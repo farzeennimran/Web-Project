@@ -33,8 +33,8 @@ app.use(session({
 var config = {
     server: "DESKTOP-V53CERG\MSSQLSERVER01", // eg:: 'DESKTOP_mjsi\\MSSQLEXPRESS'
     database: "Weavers_Den",
-    user: 'DESKTOP-V53CERG\hp',      // please read above note
-    password: "32145",   // please read above note
+    user: '',      // write your device's name
+    password: "",   // write your device's password
    // options: {
    //     trustedConnection: true,
    //     trustServerCertificate: false
