@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ProfilE</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      <!------ Include the above in your HEAD tag ---------->
+
+          <!-- Additional CSS Files -->
+          <link rel="stylesheet" href="assets/css/fontawesome.css">
+          <link rel="stylesheet" href="assets/css/templatemo-scholar.css">
+          <link rel="stylesheet" href="assets/css/owl.css">
+          <link rel="stylesheet" href="assets/css/animate.css">
+          <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+
+       .checked {
+         color: orange;
+         }
+      body {
+        background-color: #DDD0C8;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .profile-header {
+        background-image: url("https://media.istockphoto.com/id/1036551174/photo/wood-raw-material-trunk-tree.jpg?s=1024x1024&w=is&k=20&c=nxIpytYoL4kenm0eMh2mEfzG05hf3kbGXU4Tip-vWsw=");
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+      }
+
+      .profile-pic {
+        border: 5px solid #fff;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin-top: -75px;
+        margin-left: 30px;
+      }
+
+      .profile-name {
+        font-size: 28px;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+
+      .profile-username {
+        font-size: 20px;
+        color: #888;
+      }
+
+         .badge {
+  display: inline-block;
+  background-color: #1DA1F2;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+
+      .profile-bio {
+        font-size: 18px;
+        margin-top: 20px;
+      }
+
+      .profile-stats {
+        margin-top: 30px;
+      }
+
+      .profile-stat-count {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .profile-stat-label {
+        font-size: 16px;
+        color: #888;
+        margin-top: 5px;
+      }
+
+      .profile-edit-btn {
+        display: inline-block;
+        background-color: #ffd800;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 20px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .profile-edit-btn:hover {
+        background-color: #2680c2;
+      }
+
+      .profile-actions {
+        margin-top: 20px;
+      }
+
+      .profile-action-btn {
+        display: inline-block;
+        background-color: #fff;
+        color: #333;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 18px;
+        font-weight: 600;
+        margin-right: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .profile-action-btn:hover {
+        background-color: #eee;
+      }
+
+      .profile-posts {
+        margin-top: 30px;
+      }
+
+      .profile-post {
+        margin-bottom: 30px;
+      }
+
+      .profile-post-img {
+        max-width: 100%;
+      }
+
+      .rating {
+  display: inline-block;
+}
+
+.rating input[type="radio"] {
+  display: none;
+}
+
+.rating label {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  margin-right: 5px;
+  line-height: 30px;
+}
+
+.rating label:before {
+  content: '\2605';
+}
+
+.rating input[type="radio"]:checked + label {
+  color: #ffca08;
+}
+.sx{
+    width : 500px;
+    height: 500px;
+}
+.custom{
+  position: relative;
+    left: 14%;
+    margin-top: 25px;
+}
+
+.main-button a {
+  display: inline-block;
+  background-color: rgb(221, 206, 206);
+  color: #7a6ad8;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 25px;
+  border-radius: 20px;
+  transition: all .3s;
+}
+
+.main-button a:hover {
+  background-color: #7a6ad8;
+  color: #fff;
+}
+    </style>
+  <body style="background-color:white">
+
+    <section style="background-color:white">
+      <div class="container " style="background-color:white">
+        <div class="row" style="background-color:white">
+          <div class="col">
+            <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+              <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                <li class="breadcrumb-item"><a href="/explore">explore</a></li>
+              </ol>
+            </nav>
+                <%if(premium==1){%>
+                  <h4>You are Given 10% off here</h4>
+                  <%}%>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card mb-4">
+              <div class="card-body text-center">
+                <img src="../uploads/<%=data.image%>" alt="avatar"
+                  class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3"><%=data.company_name%> <%if(data.is_premium==1){%>
+                  <img src="../uploads/check.png" alt="" style="height: 22px; width: 22px;">
+                  <%}%></h5>
+                <p class="text-muted mb-1"><%=data.contact_name%></p>
+                <p class="text-muted mb-1">Material : Silk</p>
+                <div class="d-flex justify-content-center mb-2">
+                        <div class="rating">
+                          <%if(data.rating>=1 && data.rating <2){%>
+                              <span class="fa fa-star checked"></span>
+                              <%}else if(data.rating>=2 && data.rating <3){%>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <%}else if(data.rating>=3 && data.rating <4){%>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <%}else if(data.rating>=4 && data.rating <5){%>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <%}else if(data.rating>=5){%>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked "></span>
+                                            <span class="fa fa-star  checked"></span>
+                                            <span class="fa fa-star  checked"></span>
+                                            <% }%>
+                        
+                        
+                        </div>
+                </div>
+              </div>
+            </div>
+           
+
+          </div>
+          <div class="col-lg-8">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Full Name</p>
+                  </div>
+                  <div class="col-sm-9">
+
+                    <p class="text-muted mb-0"><%=data.company_name%></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Email</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><%=data.contact_email%></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Phone</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><%=data.contact_phone%></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Address</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><%=data.address%></p>
+                  </div>
+                </div>
+                <hr>
+                <%if(data.raw_materials=="wood"){%>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Bio</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">Meet <%=data.contact_name%>, a seasoned chiffon artisan with over 10 years of industry expertise. Jane's 
+                      passion for chiffon craftsmanship began in her youth, and she has diligently refined her skills through extensive practice and 
+                      formal education. Her advanced manufacturing facility is equipped with cutting-edge machinery and staffed by a team of skilled 
+                      artisans who share her commitment to quality. <%=data.company_name%> specializes in crafting a diverse range of high-quality chiffon
+                      products, from custom-made furniture to flooring and cabinetry. Jane responsibly sources chiffon from managed forests and employs 
+                      eco-friendly processes to minimize waste, underscoring her dedication to environmental sustainability. With her outstanding 
+                      craftsmanship and commitment to eco-conscious practices, Jane is a respected authority in the chiffonworking industry, renowned for 
+                      producing some of the finest chiffon products available today.</p>
+                  </div>
+                </div>
+              <%} else if(data.raw_materials=="steel"){%>
+<div class="row">
+  <div class="col-sm-3">
+    <p class="mb-0">Bio</p>
+  </div>
+  <div class="col-sm-9">
+    <p class="text-muted mb-0">Introducing <%=data.contact_name%>, an accomplished silk artisan with over 15 years of expertise. Michael's 
+    passion for silk craftsmanship ignited at a young age, leading to years of refining his skills through both practical experience and 
+    formal education. His advanced manufacturing facility is staffed with skilled engineers and technicians who share his unwavering commitment
+    to quality. Specializing in diverse applications, from construction materials to automotive parts, <%=data.company_name%> delivers a broad
+    array of top-notch silk products. Michael ensures product excellence by sourcing silk from reputable suppliers and employing cutting-edge 
+    technologies, solidifying his reputation as a leader in the silkworking industry.</p>
+  </div>
+</div>
+                <%} else if(data.raw_materials=="plastic" ){%>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Bio</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0">Introducing <%=data.contact_name%>, a skilled cotton manufacturer with over 20 years of expertise. Sarah's 
+                          passion for cotton manufacturing ignited in her youth, and she has meticulously refined her skills through years of practice and 
+                          formal education. Her state-of-the-art manufacturing facility is staffed by a dedicated team of skilled technicians who share her 
+                          commitment to quality. <%=data.company_name%> specializes in producing a diverse range of top-quality cotton products, ranging from 
+                          household items to medical equipment, known for their durability and longevity. Sarah sources raw materials from reputable suppliers 
+                          and employs advanced technologies to ensure her products meet the highest industry standards. With her exceptional expertise and 
+                          unwavering commitment to quality, Sarah stands as a respected figure in the cotton manufacturing industry, recognized for delivering
+                          innovative and reliable cotton products.</p>
+                      </div>
+                    </div>
+                    <%}%>
+              </div>
+              <%if(review==1){%>
+                <div class="container">
+                  <form action="/review" method="post">
+                    <div>
+                      <input type="radio" id="admin" name="role" value="Positive" checked>
+                      <label for="positive">Positive</label><br>
+                      <input type="radio" id="Manufacturer" name="role" value="Negative">
+                      <label for="Negative">Negative</label><br>
+                    </div>
+                    <input type="hidden" value="<%=data.manufacturer_id%>" name="manid">
+                    <input type="submit" value="Give review" id="">
+                  </form>
+                </div>
+                <%}else if(review==0){%>
+                  <div class="container">
+                  <h2>Already Reviewed</h2>
+                  </div>
+                  <%}%>
+
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </section>
+    <%if(check==0){%>
+      <div class="container py-5 " style="background-color:white">
+        <div class="main-button">
+        <a href="/editprofile" >Edit Profile</a>
+        </div>
+        <form method="post" action="/cevent" style="background-color:white">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Partner Company Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              name="company">
+        </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Benefits</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="benefit">
+          </div>
+          <input type="hidden" value="<%=data.manufacturer_id%>" name="id">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    
+    
+      </div>    
+      <%}%>
+
+      <section style="background-color:white;" >
+    <%if(meet.length> 0){
+      meet.forEach(function(data){
+      %>
+      <div class="container py-5 " style="background-color:white;">
+      <div class="card">
+        <div class="card-header">
+          <h5>Meeting</h5>
+        </div>
+        <div class="card-body">
+        
+          <h6><%=data.address%></h6>
+          <a href="/del/<%=data.location_id%>/<%=data.manufacturer_id%>" class="btn btn-primary m-3">Meeting Done</a>
+        </div>
+      </div>
+      </div>
+      <%}) }%>
+      <div class="custom" style="background-color:white;">
+      <%if(data.raw_materials=="Silk"){%>
+       
+      <div class="wrapper" style="width: 100vw; background-color:white">
+        <img class="sx" src="https://images.unsplash.com/photo-1605600659873-d808a13e4d2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="">
+        <img class="sx" src="https://images.unsplash.com/photo-1592438944517-ee7d4fd058c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
+        <img class="sx" src="https://images.unsplash.com/photo-1616661317985-aeb2a13016d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHN0ZWVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="">
+        <img  class="sx"src="https://images.unsplash.com/photo-1623489254637-a2dd8375243d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80" alt="">
+      </div>
+      <%}else if(data.raw_materials=="Chiffon"){%>
+<div class="wrapper" style="width: 100vw; background-color:white">
+  <img class="sx"
+    src="https://plus.unsplash.com/premium_photo-1680082510810-8e97cf41aecb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=684&q=80"
+    alt="">
+  <img class="sx"
+    src="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+    alt="">
+  <img class="sx"
+    src="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80"
+    alt="">
+  <img class="sx" src="https://source.unsplash.com/random/600x600?furniture" alt="">
+</div>
+
+       <%}else if(data.raw_materials=="plastic"){%>
+
+        <div class="wrapper" style="width: 100vw; background-color:whi">
+          <img class="sx" src="https://images.unsplash.com/photo-1536939459926-301728717817?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
+          <img class="sx" src="https://images.unsplash.com/photo-1604187351574-c75ca79f5807?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"alt="">
+          <img class="sx" src="https://images.unsplash.com/photo-1551516453-67fcc450db63?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="">
+          <img class="sx" src="https://images.unsplash.com/photo-1633469924738-52101af51d87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+        </div>
+       
+        <%}%>
+ 
+</div>
+
+</section>
+<script>
+      const themeToggleBtn = document.querySelector('#theme-toggle');
+const body = document.querySelector('body');
+
+themeToggleBtn.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+});
+  (function (e) { var t, o = { className: "autosizejs", append: "", callback: !1, resizeDelay: 10 }, i = '<textarea tabindex="-1" style="position:absolute; top:-999px; left:0; right:auto; bottom:auto; border:0; padding: 0; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; box-sizing:content-box; word-wrap:break-word; height:0 !important; min-height:0 !important; overflow:hidden; transition:none; -webkit-transition:none; -moz-transition:none;"/>', n = ["fontFamily", "fontSize", "fontWeight", "fontStyle", "letterSpacing", "textTransform", "wordSpacing", "textIndent"], s = e(i).data("autosize", !0)[0]; s.style.lineHeight = "99px", "99px" === e(s).css("lineHeight") && n.push("lineHeight"), s.style.lineHeight = "", e.fn.autosize = function (i) { return this.length ? (i = e.extend({}, o, i || {}), s.parentNode !== document.body && e(document.body).append(s), this.each(function () { function o() { var t, o; "getComputedStyle" in window ? (t = window.getComputedStyle(u, null), o = u.getBoundingClientRect().width, e.each(["paddingLeft", "paddingRight", "borderLeftWidth", "borderRightWidth"], function (e, i) { o -= parseInt(t[i], 10) }), s.style.width = o + "px") : s.style.width = Math.max(p.width(), 0) + "px" } function a() { var a = {}; if (t = u, s.className = i.className, d = parseInt(p.css("maxHeight"), 10), e.each(n, function (e, t) { a[t] = p.css(t) }), e(s).css(a), o(), window.chrome) { var r = u.style.width; u.style.width = "0px", u.offsetWidth, u.style.width = r } } function r() { var e, n; t !== u ? a() : o(), s.value = u.value + i.append, s.style.overflowY = u.style.overflowY, n = parseInt(u.style.height, 10), s.scrollTop = 0, s.scrollTop = 9e4, e = s.scrollTop, d && e > d ? (u.style.overflowY = "scroll", e = d) : (u.style.overflowY = "hidden", c > e && (e = c)), e += w, n !== e && (u.style.height = e + "px", f && i.callback.call(u, u)) } function l() { clearTimeout(h), h = setTimeout(function () { var e = p.width(); e !== g && (g = e, r()) }, parseInt(i.resizeDelay, 10)) } var d, c, h, u = this, p = e(u), w = 0, f = e.isFunction(i.callback), z = { height: u.style.height, overflow: u.style.overflow, overflowY: u.style.overflowY, wordWrap: u.style.wordWrap, resize: u.style.resize }, g = p.width(); p.data("autosize") || (p.data("autosize", !0), ("border-box" === p.css("box-sizing") || "border-box" === p.css("-moz-box-sizing") || "border-box" === p.css("-webkit-box-sizing")) && (w = p.outerHeight() - p.height()), c = Math.max(parseInt(p.css("minHeight"), 10) - w || 0, p.height()), p.css({ overflow: "hidden", overflowY: "hidden", wordWrap: "break-word", resize: "none" === p.css("resize") || "vertical" === p.css("resize") ? "none" : "horizontal" }), "onpropertychange" in u ? "oninput" in u ? p.on("input.autosize keyup.autosize", r) : p.on("propertychange.autosize", function () { "value" === event.propertyName && r() }) : p.on("input.autosize", r), i.resizeDelay !== !1 && e(window).on("resize.autosize", l), p.on("autosize.resize", r), p.on("autosize.resizeIncludeStyle", function () { t = null, r() }), p.on("autosize.destroy", function () { t = null, clearTimeout(h), e(window).off("resize", l), p.off("autosize").off(".autosize").css(z).removeData("autosize") }), r()) })) : this } })(window.jQuery || window.$);
+
+  var __slice = [].slice; (function (e, t) { var n; n = function () { function t(t, n) { var r, i, s, o = this; this.options = e.extend({}, this.defaults, n); this.$el = t; s = this.defaults; for (r in s) { i = s[r]; if (this.$el.data(r) != null) { this.options[r] = this.$el.data(r) } } this.createStars(); this.syncRating(); this.$el.on("mouseover.starrr", "span", function (e) { return o.syncRating(o.$el.find("span").index(e.currentTarget) + 1) }); this.$el.on("mouseout.starrr", function () { return o.syncRating() }); this.$el.on("click.starrr", "span", function (e) { return o.setRating(o.$el.find("span").index(e.currentTarget) + 1) }); this.$el.on("starrr:change", this.options.change) } t.prototype.defaults = { rating: void 0, numStars: 5, change: function (e, t) { } }; t.prototype.createStars = function () { var e, t, n; n = []; for (e = 1, t = this.options.numStars; 1 <= t ? e <= t : e >= t; 1 <= t ? e++ : e--) { n.push(this.$el.append("<span class='glyphicon .glyphicon-star-empty'></span>")) } return n }; t.prototype.setRating = function (e) { if (this.options.rating === e) { e = void 0 } this.options.rating = e; this.syncRating(); return this.$el.trigger("starrr:change", e) }; t.prototype.syncRating = function (e) { var t, n, r, i; e || (e = this.options.rating); if (e) { for (t = n = 0, i = e - 1; 0 <= i ? n <= i : n >= i; t = 0 <= i ? ++n : --n) { this.$el.find("span").eq(t).removeClass("glyphicon-star-empty").addClass("glyphicon-star") } } if (e && e < 5) { for (t = r = e; e <= 4 ? r <= 4 : r >= 4; t = e <= 4 ? ++r : --r) { this.$el.find("span").eq(t).removeClass("glyphicon-star").addClass("glyphicon-star-empty") } } if (!e) { return this.$el.find("span").removeClass("glyphicon-star").addClass("glyphicon-star-empty") } }; return t }(); return e.fn.extend({ starrr: function () { var t, r; r = arguments[0], t = 2 <= arguments.length ? __slice.call(arguments, 1) : []; return this.each(function () { var i; i = e(this).data("star-rating"); if (!i) { e(this).data("star-rating", i = new n(e(this), r)) } if (typeof r === "string") { return i[r].apply(i, t) } }) } }) })(window.jQuery, window); $(function () { return $(".starrr").starrr() })
+
+  $(function () {
+
+    $('#new-review').autosize({ append: "\n" });
+
+    var reviewBox = $('#post-review-box');
+    var newReview = $('#new-review');
+    var openReviewBtn = $('#open-review-box');
+    var closeReviewBtn = $('#close-review-box');
+    var ratingsField = $('#ratings-hidden');
+
+    openReviewBtn.click(function (e) {
+      reviewBox.slideDown(400, function () {
+        $('#new-review').trigger('autosize.resize');
+        newReview.focus();
+      });
+      openReviewBtn.fadeOut(100);
+      closeReviewBtn.show();
+    });
+
+    closeReviewBtn.click(function (e) {
+      e.preventDefault();
+      reviewBox.slideUp(300, function () {
+        newReview.focus();
+        openReviewBtn.fadeIn(200);
+      });
+      closeReviewBtn.hide();
+
+    });
+
+    $('.starrr').on('starrr:change', function (e, value) {
+      ratingsField.val(value);
+    });
+  });
+
+  let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+</script>
+<script src="assets/js/dark.js"></script>
+</body>
+
+</html>
