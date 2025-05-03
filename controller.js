@@ -36,12 +36,11 @@ var config = {
    //     trustedConnection: true,
    //     trustServerCertificate: false
    // },
-   connectionString: "Driver={ODBC Driver 17 for SQL Server};Server=DESKTOP-V53CERG\MSSQLSERVER01;Database=Weavers_Den;Trusted_Connection=yes;",
+   connectionString: "Driver={ODBC Driver 17 for SQL Server};Server=YOUR-DEVICE-NAME\MSSQLSERVER01;Database=Weavers_Den;Trusted_Connection=yes;",
    driver: "msnodesqlv8",
-   port: 1433
+   port: //write port number
 
 }
-
 
 app.set('view engine', 'ejs')
 app.use(express.json()); // For parsing application/json
@@ -133,8 +132,6 @@ Router.post('/contact', (req, res) => {
     res.render('contact')
 })
 
-
-
 Router.get('/login', (req, res) => {
     if (req.session.username) {
         res.redirect('/home')
@@ -143,7 +140,6 @@ Router.get('/login', (req, res) => {
         res.render('login')
     }
 })
-
 
 Router.post('/login', (req, res) => {
 
@@ -181,10 +177,7 @@ Router.post('/login', (req, res) => {
             })
         }
     })
-
-
 })
-
 
 Router.get('/editprofile', (req, res) => {
     if (req.session.username && req.session.role == 'C') {
@@ -210,7 +203,6 @@ Router.get('/editprofile', (req, res) => {
                                 console.log(datas)
                             }
                         })
-
                     }
                     else {
                         console.log("No Reccord Found")
@@ -218,7 +210,6 @@ Router.get('/editprofile', (req, res) => {
                 })
             }
         })
-
     }
     else if (req.session.username && req.session.role == 'M') {
         sql.connect(config, (err) => {
@@ -243,7 +234,6 @@ Router.get('/editprofile', (req, res) => {
                                 console.log(datas)
                             }
                         })
-
                     }
                     else {
                         console.log("No Reccord Found")
@@ -251,7 +241,6 @@ Router.get('/editprofile', (req, res) => {
                 })
             }
         })
-
     }
     else {
         res.redirect('/home')
@@ -322,7 +311,6 @@ Router.post('/update', upload.single('Picture'), (req, res) => {
                     })
                 }
             })
-
         }
         else {
             sql.connect(config, (err) => {
@@ -342,10 +330,7 @@ Router.post('/update', upload.single('Picture'), (req, res) => {
             })
         }
     }
-
-
 })
-
 
 Router.get('/logout', (req, res) => {
     if (req.session.username) {
@@ -356,7 +341,6 @@ Router.get('/logout', (req, res) => {
         res.redirect('/editprofile')
     }
 })
-
 
 Router.get('/signup', (req, res) => {
     if (req.session.username) {
@@ -372,7 +356,6 @@ Router.post('/signup', (req, res) => {
     const username = req.body.username
     const email = req.body.email
     const password = req.body.password
-
 
     sql.connect(config, function (err) {
         if (err) console.log(err)
@@ -408,9 +391,7 @@ Router.post('/signup', (req, res) => {
                 }
             }
         })
-
     })
-
 })
 
 Router.post('/signupcon', upload.single('Picture'), (req, res) => {
@@ -425,7 +406,6 @@ Router.post('/signupcon', upload.single('Picture'), (req, res) => {
     const contactphone = req.body.contactphone
 
     console.log(username, email, password, contactname, contactemail, companyname, website, address, contactphone)
-
 
     sql.connect(config, function (err) {
         if (err) console.log(err)
@@ -484,19 +464,14 @@ Router.post('/signupcon', upload.single('Picture'), (req, res) => {
                                         }
                                     }
                                     )
-
                                 })
-
                             }
                         })
                     })
-
                 }
             }
         })
-
     })
-
 })
 
 Router.post('/signupman', upload.single('Picture'), (req, res) => {
@@ -568,21 +543,14 @@ Router.post('/signupman', upload.single('Picture'), (req, res) => {
                                         }
                                     }
                                     )
-
                                 })
-
                             }
                         })
                     })
-
-
-
                 }
             }
         })
-
     })
-
 })
 
 Router.get('/explore', (req, res) => {
@@ -677,7 +645,6 @@ Router.get('/consumer', (req, res) => {
                                         console.log(datas)
                                     }
                                 })
-
                             }
                         })
                     }
@@ -723,7 +690,6 @@ Router.get('/manufuacturerp', (req, res) => {
                                 console.log(datas)
                             }
                         })
-
                     }
                     else {
                         console.log("No Reccord Found")
@@ -731,13 +697,11 @@ Router.get('/manufuacturerp', (req, res) => {
                 })
             }
         })
-
     }
     else {
         res.redirect('/home')
     }
 })
-
 
 Router.get('/manufacturer/:id', (req, res) => {
     const id = req.params['id']
@@ -799,19 +763,15 @@ Router.get('/manufacturer/:id', (req, res) => {
                                                     }
                                                 }
                                             })
-
                                         }
                                     })
                                 }
                                 else {
                                     res.render('ProfileManu1', { data: row.recordset[0], check: 1, review: 2, premium: 0, meet: 0 })
                                 }
-
                             }
                         }
-
                     })
-
                 }
             })
         }
@@ -903,10 +863,8 @@ Router.post('/review', (req, res) => {
                                                                     })
                                                                 }
                                                             })
-
                                                         }
                                                     })
-
                                                 } else if (standard == 1) {
                                                     var request = new sql.Request()
                                                     var query = `UPDATE Manufacturer SET rating=${rating}, is_premium=${1} WHERE manufacturer_id=${manid}`
@@ -936,10 +894,8 @@ Router.post('/review', (req, res) => {
                                                                     })
                                                                 }
                                                             })
-
                                                         }
                                                     })
-
                                                 }
                                                 else if (premium == 1) {
                                                     var request = new sql.Request()
@@ -970,10 +926,8 @@ Router.post('/review', (req, res) => {
                                                                     })
                                                                 }
                                                             })
-
                                                         }
                                                     })
-
                                                 }
                                                 else {
                                                     var request = new sql.Request()
@@ -984,39 +938,28 @@ Router.post('/review', (req, res) => {
                                                             res.redirect(`/manufacturer/${manid}`)
                                                         }
                                                     })
-
                                                 }
-
                                             }
                                         })
                                     }
                                 })
-
                             }
                         })
                     }
                 })
-
-
-
             }
         })
-
     }
     else {
         res.redirect('/home')
     }
-
 })
-
-
 
 Router.post('/setpremconsum', (req, res) => {
     if (req.session.username) {
         sql.connect(config, (err) => {
             if (err) throw err
             else {
-
                 const role = req.body.role
                 const conid = req.body.conid
                 if (role == "Basic") {
@@ -1043,7 +986,6 @@ Router.post('/setpremconsum', (req, res) => {
                                                 else {
                                                     data = row.recordset[0]['premium_consumer_id'] + 1
                                                 }
-
                                                 var request = new sql.Request()
                                                 var query = `INSERT INTO PremiumConsumer(premium_consumer_id, consumer_id, subscription_type, subscription_start_date, subscription_end_date)  VALUES(${data}, ${conid}, 'basic', '2022-01-01', '2022-12-31')`;
                                                 request.query(query, (err, resu) => {
@@ -1067,11 +1009,9 @@ Router.post('/setpremconsum', (req, res) => {
                                         })
                                     }
                                 }
-
                             })
                         }
                     })
-
                 }
                 if (role == "Standard") {
                     var request = new sql.Request()
@@ -1121,11 +1061,9 @@ Router.post('/setpremconsum', (req, res) => {
                                         })
                                     }
                                 }
-
                             })
                         }
                     })
-
                 }
                 if (role == "Premium") {
                     var request = new sql.Request()
@@ -1173,18 +1111,14 @@ Router.post('/setpremconsum', (req, res) => {
                                         })
                                     }
                                 }
-
                             })
                         }
                     })
                 }
-
-
             }
         })
     }
 })
-
 
 Router.post('/cevent', (req, res) => {
     const company = req.body.company
@@ -1248,7 +1182,6 @@ Router.post('/meeting', (req, res) => {
     })
 })
 
-
 Router.get('/del/:id/:ids', (req, res) => {
     const id = req.params.id
     const ids = req.params.ids
@@ -1267,7 +1200,6 @@ Router.get('/del/:id/:ids', (req, res) => {
         }
     })
 })
-
 
 app.use('/', Router)
 app.listen(5000, () => {
