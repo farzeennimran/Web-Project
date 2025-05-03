@@ -18,9 +18,6 @@ var storage = multer.diskStorage({
 })
 var upload = multer({ storage: storage })
 
-
-
-
 const oneDay = 1000 * 60 * 60 * 24;
 app.use(session({
     secret: "itsasecret",
