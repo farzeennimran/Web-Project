@@ -1,0 +1,313 @@
+create database Weavers_den
+use Weavers_den
+go
+
+--creating\designing our schema
+
+CREATE TABLE User1 (
+  user_id INT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  user_type VARCHAR(25) NOT NULL CHECK(user_type IN ('C', 'M')),
+  created_at DATETIME2 DEFAULT GETDATE()
+);
+
+CREATE TABLE Manufacturer (
+  MID INT,
+  manufacturer_id INT NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  company_name VARCHAR(100) NOT NULL,
+  contact_name VARCHAR(100) NOT NULL,
+  contact_email VARCHAR(100) NOT NULL,
+  contact_phone VARCHAR(20) NOT NULL,
+  website_url VARCHAR(255) NOT NULL,
+  address VARCHAR(255) NOT NULL,
+  rating FLOAT DEFAULT 0.0,
+  is_premium BIT DEFAULT 0,
+  created_at DATETIME2 DEFAULT GETDATE(),
+  textile_materials VARCHAR(255), -- new attribute
+  PRIMARY KEY(MID),
+  FOREIGN KEY(manufacturer_id) REFERENCES User1(user_id) ON DELETE CASCADE
+);
+
+
+
+CREATE TABLE Consumer (
+  CID INT,
+  consumer_id INT NOT NULL ,
+  password_hash VARCHAR(255) NOT NULL,
+  company_name VARCHAR(100) NOT NULL,
+  contact_name VARCHAR(100) NOT NULL,
+  contact_email VARCHAR(100) NOT NULL,
+  contact_phone VARCHAR(20) NOT NULL,
+  website_url VARCHAR(255) NOT NULL,
+  address VARCHAR(255) NOT NULL,
+  rating FLOAT DEFAULT 0.0,
+  is_premium BIT DEFAULT 0,
+  created_at DATETIME2 DEFAULT GETDATE(),
+  PRIMARY KEY(CID),
+  Foreign key(consumer_id) references User1(user_id)  ON DELETE CASCADE
+);
+
+--some alterations
+GO
+ALTER TABLE Consumer
+ADD CONSTRAINT C_id UNIQUE (consumer_id);
+ALTER TABLE Manufacturer
+ADD CONSTRAINT M_id UNIQUE (manufacturer_id);
+GO
+
+CREATE TABLE Review (
+  review_id INT PRIMARY KEY,
+  consumer_id INT NOT NULL,
+  manufacturer_id INT NOT NULL,
+  rating INT NOT NULL,
+  comment TEXT,
+  created_at DATETIME2 DEFAULT GETDATE(),
+  FOREIGN KEY (consumer_id) REFERENCES Consumer(consumer_id) ON DELETE NO ACTION,
+  FOREIGN KEY (manufacturer_id) REFERENCES Manufacturer(manufacturer_id) ON DELETE NO ACTION
+);
+
+CREATE TABLE OnsiteMeetingLocation (
+  location_id INT PRIMARY KEY,
+  manufacturer_id INT NOT NULL,
+  address VARCHAR(255) NOT NULL,
+  created_at DATETIME2 DEFAULT GETDATE(),
+  FOREIGN KEY (manufacturer_id) REFERENCES Manufacturer(manufacturer_id) ON DELETE CASCADE
+);
+
+CREATE TABLE PremiumManufacturer (
+  premium_manufacturer_id INT PRIMARY KEY,
+  manufacturer_id INT NOT NULL,
+  subscription_type VARCHAR(25) NOT NULL CHECK(subscription_type IN ('basic','standard','premium')),
+  subscription_start_date DATE NOT NULL,
+  subscription_end_date DATE NOT NULL,
+  created_at DATETIME2 DEFAULT GETDATE(),
+  FOREIGN KEY (manufacturer_id) REFERENCES Manufacturer(manufacturer_id)  ON DELETE CASCADE
+);
+
+CREATE TABLE PremiumConsumer (
+  premium_consumer_id INT PRIMARY KEY,
+  consumer_id INT NOT NULL,
+  subscription_type VARCHAR(25) NOT NULL CHECK(subscription_type IN ('basic','standard','premium')),
+  subscription_start_date DATE NOT NULL,
+  subscription_end_date DATE NOT NULL,
+  created_at DATETIME2 DEFAULT GETDATE(),
+  FOREIGN KEY (consumer_id) REFERENCES Consumer(consumer_id)  ON DELETE CASCADE
+);
+
+CREATE TABLE Subscription (
+  subscription_id INT PRIMARY KEY,
+  consumer_id INT NOT NULL,
+  subscription_type VARCHAR(25) NOT NULL CHECK(subscription_type IN ('basic','standard','premium')),
+  subscription_start_date DATE NOT NULL,
+  created_at DATETIME2 DEFAULT GETDATE(),
+  FOREIGN KEY (consumer_id) REFERENCES Consumer(consumer_id)  ON DELETE CASCADE
+);
+
+CREATE TABLE Regular (
+  reg_id int primary key,
+  user_id int not null,
+  login_Date DATE DEFAULT GETDATE(),
+  FOREIGN KEY (user_id) REFERENCES User1(user_id)  ON DELETE CASCADE
+);
+
+CREATE TABLE Bonus(
+  Bonus_id int primary key,
+  user_id int not null,
+  Bonus BIT DEFAULT 0,
+  FOREIGN KEY (user_id) REFERENCES User1(user_id)  ON DELETE CASCADE
+)
+
+CREATE TABLE HelpLine ( 
+id INT PRIMARY KEY, 
+user_id INT NOT NULL,
+description VARCHAR(255),
+FOREIGN KEY (user_id) REFERENCES User1(user_id) ON DELETE CASCADE );
+
+CREATE TABLE partnerships ( 
+id INT PRIMARY KEY,
+manufacturer_id INT NOT NULL,
+partner_company_name VARCHAR(255),
+partner_benefits VARCHAR(255), 
+FOREIGN KEY (manufacturer_id) REFERENCES Manufacturer(manufacturer_id) ON DELETE CASCADE );
+
+--insert in tables here
+
+--User Data
+INSERT INTO User1 (user_id, username, email, password_hash, user_type)
+VALUES (1, 'john_doe', 'john@gmail.com', 'password_hash', 'C');
+
+
+INSERT INTO User1 (user_id, username, email, password_hash, user_type) 
+VALUES (2, 'wixk_doe', 'wixk@gmail.com', 'password_hash', 'M');
+
+INSERT INTO User1(user_id,username,email,password_hash,user_type)
+Values (3,'Derek_Kim','DerekKim@gmail.com','password_hash','C')
+
+INSERT INTO User1(user_id,username,email,password_hash,user_type)
+Values (4,'Samantha_Wright','samanthawright@email.com','password_hash','M')
+
+INSERT INTO User1(user_id,username,email,password_hash,user_type)
+Values (5,'Ricardo_Perez','ricardoperez@email.com','password_hash','M')
+
+--Manufacturer Data
+INSERT INTO Manufacturer (MID,manufacturer_id, password_hash, company_name, contact_name, contact_email, contact_phone, website_url, address, rating, is_premium, textile_materials)
+VALUES (1,2, 'password_hash', 'FiberCraft Creations', 'John Smith', 'jsmith@abc.com', '555-1234', 'http://www.abcmfg.com', '123 Main St, Anytown USA', 4.5, 1, 'cotton' );
+
+INSERT INTO Manufacturer (MID,manufacturer_id, password_hash, company_name, contact_name, contact_email, contact_phone, website_url, address, rating, is_premium, textile_materials)
+VALUES (2,3,'password_hash','ThreadWonders Inc.','Olivia Davis','oliviadavis@email.com','521-9876','http://www.starlightMac.com','2021 Oakwood Dr, Anytown, USA',5,1, 'polyester')
+
+INSERT INTO Manufacturer (MID,manufacturer_id, password_hash, company_name, contact_name, contact_email, contact_phone, website_url, address, rating, is_premium, textile_materials)
+VALUES (3,4,'password_hash','EcoWeave Innovations','Zachary Evans' ,'zacharyevans@email.com','544-5467','http://www.platinumIndus.com','3435 Birchwood Dr, Nowhere, Ohio',4.3,0, 'wool')
+
+INSERT INTO Manufacturer (MID,manufacturer_id, password_hash, company_name, contact_name, contact_email, contact_phone, website_url, address, rating, is_premium, textile_materials)
+VALUES (4,5,'password_hash','TextileMasters Co.','Sophia Baker', 'sophiabaker@email.com','432-4568','http://www.vertexMfg.com','Via Condotti, 00187 Rome, Italy',4,1, 'silk')
+
+INSERT INTO Manufacturer (MID,manufacturer_id, password_hash, company_name, contact_name, contact_email, contact_phone, website_url, address, rating, is_premium, textile_materials)
+VALUES (5,1,'password_hash','SilkSculpt Textiles','Ava Reed','avareed@email.com','311-4920','http://www.nexusGroup.com','Gran Vía, 28013 Madrid, Spain',3.5,0, 'nylon')
+
+
+--Consumer Data
+INSERT INTO Consumer (CID,consumer_id, password_hash, company_name, contact_name, contact_email, contact_phone, website_url, address, rating, is_premium)
+VALUES (1,3, 'password_hash', 'XYZ Company', 'Jane Doe', 'jane@xyz.com', '555-5678', 'http://www.xyzco.com', '456 Oak St, Anytown USA', 4.0, 0);
+
+INSERT INTO Consumer (CID,consumer_id, password_hash, company_name, contact_name, contact_email, contact_phone, website_url, address, rating, is_premium)
+VALUES (2,2,'password_hash','GreenPeak Enterprises','Emma Cooper','emmacooper@email.com','387-8881','http://www.greenpeak.com','Times Square, New York, NY 10036, USA',4.5,1)
+
+INSERT INTO Consumer (CID,consumer_id, password_hash, company_name, contact_name, contact_email, contact_phone, website_url, address, rating, is_premium)
+VALUES (3,1,'password_hash','Luminate Dynamics','Leah Carter', 'leahcarter@email.com','579-0001','http://www.luminateDynamic.com','The Bund, Wai Tan, Huangpu Qu, Shanghai Shi, China',5,1)
+
+INSERT INTO Consumer (CID,consumer_id, password_hash, company_name, contact_name, contact_email, contact_phone, website_url, address, rating, is_premium)
+VALUES (4,5,'password_hash','QuantumShift Inc.','Lucas Chen','lucaschen@email.com','112-7865','http://www.quantumShift.com','Sheikh Zayed Road, Dubai, United Arab Emirates',4.3,0)
+
+INSERT INTO Consumer (CID,consumer_id, password_hash, company_name, contact_name, contact_email, contact_phone, website_url, address, rating, is_premium)
+VALUES (5,4,'password_hash','Prodigy Manufacturing Company','Madison Green','madisongreen@email.com','561-7721','http://www.prodigy.com','Leidseplein 13, 1017 PS Amsterdam, Netherlands',4.1,1)
+
+
+--Review Data
+INSERT INTO Review (review_id, consumer_id, manufacturer_id, rating, comment)
+VALUES (1, 1, 2, 4, 'Great product, fast shipping!');
+
+INSERT INTO Review (review_id, consumer_id, manufacturer_id, rating, comment)
+VALUES (2,2,3,4.1,'Impressed with their commitment to sustainability and social responsibility.')
+
+INSERT INTO Review (review_id, consumer_id, manufacturer_id, rating, comment)
+VALUES (3,4,2,3.5,'Disappointed with the quality of the product received.')
+
+INSERT INTO Review (review_id, consumer_id, manufacturer_id, rating, comment)
+VALUES (4,5,1,5,'Exceptional attention to detail and professionalism.')
+
+INSERT INTO Review (review_id, consumer_id, manufacturer_id, rating, comment)
+VALUES (5,3,5,4.5,'Consistently delivers high-quality products.')
+
+
+--ON site Meeting Location Data
+INSERT INTO OnsiteMeetingLocation (location_id, manufacturer_id, address)
+VALUES (2, 2, '789 Elm St, Anytown USA');
+
+INSERT INTO OnsiteMeetingLocation (location_id, manufacturer_id, address)
+VALUES (1,3,'23 kent st,Runnemede USA')
+
+INSERT INTO OnsiteMeetingLocation (location_id, manufacturer_id, address)
+VALUES (3,4,'56 fortyard st,hench Ohio')
+
+INSERT INTO OnsiteMeetingLocation (location_id, manufacturer_id, address)
+VALUES (4,1,'Thorder 4352,Rome,Italy')
+
+INSERT INTO OnsiteMeetingLocation (location_id, manufacturer_id, address)
+VALUES (5,5,'GreenLand 20015,Davi ,Spain ')
+
+--Premium Manufacturer Data
+INSERT INTO PremiumManufacturer (premium_manufacturer_id, manufacturer_id, subscription_type, subscription_start_date, subscription_end_date)
+VALUES (1, 2, 'premium', '2022-01-01', '2022-12-31');
+
+INSERT INTO PremiumManufacturer (premium_manufacturer_id, manufacturer_id, subscription_type, subscription_start_date, subscription_end_date)
+VALUES (2,3,'standard','2021-01-01','2021-11-23')
+
+INSERT INTO PremiumManufacturer (premium_manufacturer_id, manufacturer_id, subscription_type, subscription_start_date, subscription_end_date)
+VALUES (3,1,'basic','2023-01-01','2023-02-10')
+
+INSERT INTO PremiumManufacturer (premium_manufacturer_id, manufacturer_id, subscription_type, subscription_start_date, subscription_end_date)
+VALUES (4,4,'premium','2020-01-01','2023-03-5')
+
+INSERT INTO PremiumManufacturer (premium_manufacturer_id, manufacturer_id, subscription_type, subscription_start_date, subscription_end_date)
+VALUES (5,5,'basic','2021-12-11','2022-01-18')
+
+--Premium Consumer Data
+INSERT INTO PremiumConsumer (premium_consumer_id, consumer_id, subscription_type, subscription_start_date, subscription_end_date) 
+VALUES (1, 1, 'standard', '2022-03-01', '2023-02-28');
+
+INSERT INTO PremiumConsumer (premium_consumer_id, consumer_id, subscription_type, subscription_start_date, subscription_end_date) 
+VALUES (2, 3, 'standard', '2021-04-11', '2021-07-18');
+
+INSERT INTO PremiumConsumer (premium_consumer_id, consumer_id, subscription_type, subscription_start_date, subscription_end_date) 
+VALUES (3, 2, 'premium', '2020-01-01', '2023-03-18');
+
+INSERT INTO PremiumConsumer (premium_consumer_id, consumer_id, subscription_type, subscription_start_date, subscription_end_date) 
+VALUES (4, 4, 'basic', '2021-02-01', '2021-03-01');
+
+INSERT INTO PremiumConsumer (premium_consumer_id, consumer_id, subscription_type, subscription_start_date, subscription_end_date) 
+VALUES (5, 2, 'premium', '2023-01-09', '2023-03-18');
+
+--Subscription Data
+INSERT INTO Subscription (subscription_id, consumer_id, subscription_type, subscription_start_date) 
+VALUES (1, 1, 'basic', '2023-01-01');
+
+INSERT INTO Subscription (subscription_id, consumer_id, subscription_type, subscription_start_date) 
+VALUES (2, 2, 'premium', '2022-11-13');
+
+INSERT INTO Subscription (subscription_id, consumer_id, subscription_type, subscription_start_date) 
+VALUES (3, 4, 'standard', '2021-12-11');
+
+INSERT INTO Subscription (subscription_id, consumer_id, subscription_type, subscription_start_date) 
+VALUES (4, 3, 'basic', '2020-07-05');
+
+INSERT INTO Subscription (subscription_id, consumer_id, subscription_type, subscription_start_date) 
+VALUES (5, 1, 'standard', '2022-03-18');
+
+--Regular Data
+INSERT INTO Regular (reg_id,user_id ) VALUES
+(1,2),
+(2,3),
+(3,1),
+(4,5),
+(5,4);
+
+--Bonus Data
+INSERT INTO Bonus(Bonus_id,user_id,Bonus) VALUES
+(1,2,1),
+(2,3,0),
+(3,1,1),
+(4,4,1),
+(5,5,0);
+
+--helpline data
+INSERT INTO HelpLine (id, user_id, description)
+VALUES (1, 1, 'My Account is working very slow'),
+(2, 2, 'I am having trouble with my subscription'),
+(3, 3, 'I need assistance with a product');
+
+--partnerships data
+INSERT INTO partnerships (id, manufacturer_id, partner_company_name, partner_benefits)
+VALUES (1, 2, 'XYZ Inc.', '10% discount on our products'),
+(2, 2, 'ABC Corp.', 'Exclusive access to our new products'),
+(3, 4, '123 Corp.', 'Joint marketing campaign');
+
+--show data present in tables
+select* from User1
+select* from Manufacturer
+select* from Consumer
+select* from Review
+select* from OnsiteMeetingLocation
+select* from PremiumManufacturer
+select* from PremiumConsumer
+select* from Subscription
+select * from Regular
+select * from Bonus
+select * from HelpLine
+select * from partnerships
+
+
+
